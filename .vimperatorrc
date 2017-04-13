@@ -1,0 +1,51 @@
+"3.16.0 (created: 2017/02/01 00:55:15)
+
+source! /home/shun/.vimperatorrc.local
+
+" vim: set ft=vimperator:
+
+"===========================================
+" vimperatorrc
+"===========================================
+
+set titlestring=Firefox
+
+beep off
+set noerrorbells
+
+set focuscontent
+
+"===========================================
+" key mapping
+"===========================================
+
+noremap j 5<C-e>
+noremap k 5<C-y>
+
+map h <C-PageUp>
+map l <C-PageDown>
+
+map <C-l> :tabmove! +1<CR>
+map <C-h> :tabmove! -1<CR>
+
+inoremap ( ()<LEFT>
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+
+map <C-r> :restart<CR>
+map R :source ~/.vimperatorrc<CR>
+
+
+"===========================================
+" hint setting
+"===========================================
+
+set hintchars=abcdefghi
+
+" ヒント表示色
+highlight Hint font-family: Arial; font-size: 16px; font-weight: bold; text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black, 1px 1px 2px black; color: #33cccc;
+highlight HintElem color: gray; background-color: #a1e4e6;
+highlight HintActive color: black; background-color: #ff8700;
+
+
+echo "Loaded vimperatorrc"
