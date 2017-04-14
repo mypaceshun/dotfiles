@@ -30,11 +30,14 @@ colorscheme ron
 " Tab
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set expandtab
+set autoindent
 set smartindent
 
 " Key mapping
 nnoremap H ^
 nnoremap L $
 
+set clipboard=unnamed
 
