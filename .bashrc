@@ -115,9 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# Alias
-alias ll="ls -al"
-alias la="ls -a"
+
+
 
 # tmux running
 
