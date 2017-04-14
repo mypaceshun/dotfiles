@@ -1,5 +1,4 @@
-# Alias
-alias ll="ls -al"
-alias la="ls -a"
+PATH=$PATH:$HOME/bin
+export PATH
 
 source ~/.bashrc

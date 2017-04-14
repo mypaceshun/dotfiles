@@ -34,7 +34,7 @@ set expandtab
 set smartindent
 
 " Key mapping
-nnoremap h ^
-nnoremap l $
+nnoremap H ^
+nnoremap L $
 
 
