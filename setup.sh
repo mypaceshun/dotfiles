@@ -11,7 +11,7 @@ do
             mkdir $HOME/dotfiles/backup
         fi
         echo $file move backup directory becouse $file is exist
-        mv $HOME/$file $HOME/dotfiles/backup/$file
+        mv -fv $HOME/$file $HOME/dotfiles/backup/$file
     fi
     if [ ! -e $HOME/$file ]; then
         echo make symbolic link $file
