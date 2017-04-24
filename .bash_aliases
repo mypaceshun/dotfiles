@@ -7,3 +7,6 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias reno='echo れのちゃん一生好き'
+
+alias e='exit'
+
