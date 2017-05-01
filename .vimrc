@@ -39,5 +39,7 @@ set smartindent
 nnoremap H ^
 nnoremap L $
 
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
+
 set clipboard=unnamed
 
