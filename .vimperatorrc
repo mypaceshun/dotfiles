@@ -35,6 +35,8 @@ inoremap [ []<LEFT>
 map <C-r> :restart<CR>
 map R :source ~/.vimperatorrc<CR>
 
+nnoremap gi gi<END>
+
 
 "===========================================
 " hint setting
