@@ -28,9 +28,9 @@ set number
 colorscheme ron
 
 " Tab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set autoindent
 set smartindent
@@ -39,7 +39,18 @@ set smartindent
 nnoremap H ^
 nnoremap L $
 
+" window control
+nnoremap ss :split<CR>
+nnoremap sv :vsplit<CR>
+nnoremap sh <C-w>h<CR>
+nnoremap sj <C-w>j<CR>
+nnoremap sk <C-w>k<CR>
+nnoremap sl <C-w>l<CR>
+
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 
-set clipboard=unnamed
+" 
+vnoremap <silent> <C-p> "0p<CR>
+
+set clipboard=unnamed,autoselect
 
