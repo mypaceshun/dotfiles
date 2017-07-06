@@ -6,3 +6,4 @@ alias la='ls -a'
 alias e='exit'
 alias ..='cd ..'
 
+alias dcompose='docker-compose'
