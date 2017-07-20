@@ -1,0 +1,1 @@
+echo 'filetype is shell'

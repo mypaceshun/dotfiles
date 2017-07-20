@@ -41,17 +41,100 @@ nnoremap H ^
 nnoremap L $
 
 " window control
-nnoremap ss :split<CR>
-nnoremap sv :vsplit<CR>
-nnoremap sh <C-w>h<CR>
-nnoremap sj <C-w>j<CR>
-nnoremap sk <C-w>k<CR>
-nnoremap sl <C-w>l<CR>
+nnoremap <silent> ss :split<CR>
+nnoremap <silent> sv :vsplit<CR>
+nnoremap <silent> sh <C-w>h<CR>
+nnoremap <silent> sj <C-w>j<CR>
+nnoremap <silent> sk <C-w>k<CR>
+nnoremap <silent> sl <C-w>l<CR>
 
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
-
 " 
 vnoremap <silent> <C-p> "0p<CR>
 
-set clipboard=unnamed,autoselect
+" Reload
+:command! Reload source ~/.vimrc
 
+" for UnicornIDM
+nnoremap T :w<CR>:!cd ~/document/unicornidm && make test<CR>
+nnoremap TT :w<CR>:!cd ~/document/unicornidm && make test T="test/backend"<CR>
+nnoremap TTT :w<CR>:!cd ~/document/unicornidm && make test T="test/backend/test_ldap.py"<CR>
+
+"========================
+" NeoBundle
+"========================
+
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath^=/home/shun/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('/home/shun/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'davidhalter/jedi-vim'
+
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+"========================
+" Other setting for plugin
+"========================
+"Unite
+noremap <C-n> :Unite -buffer-name=file file<CR>
+noremap <C-z> :Unite file_mru<CR>
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+
+"NERDTree
+noremap <C-t> :NERDTree<CR>
+au FileType nerdtree nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+
+"syntastic
+let g:syntastic_python_checkers = ["flake8"]
+
+"========================
+" Alias
+"========================
+:command! Tree NERDTree
+
+
+"=======================
+" ネットからコピペ
+"=======================
+
+""""""""""""""""""""""""""""""
+" 最後のカーソル位置を復元する
+""""""""""""""""""""""""""""""
+ if has("autocmd")
+     autocmd BufReadPost *
+         \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+endif
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+"自動的に閉じ括弧を入力
+""""""""""""""""""""""""""""""
+imap { {}<LEFT>
+imap [ []<LEFT>
+imap ( ()<LEFT>
+""""""""""""""""""""""""""""""
