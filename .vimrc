@@ -84,6 +84,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'tpope/vim-fugitive'
 
 " Required:
 call neobundle#end()
@@ -109,6 +111,9 @@ au FileType nerdtree nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 
 "syntastic
 let g:syntastic_python_checkers = ["flake8"]
+
+"indentLine
+let g:indentLine_chare = '┆'
 
 "========================
 " Alias
