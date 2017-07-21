@@ -69,7 +69,7 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/home/shun/.vim/bundle/neobundle.vim/
+set runtimepath^=/home/shun/.vim/bundle/neobundle.vim
 
 " Required:
 call neobundle#begin(expand('/home/shun/.vim/bundle'))
@@ -99,8 +99,8 @@ NeoBundleCheck
 " Other setting for plugin
 "========================
 "Unite
-noremap <C-n> :Unite -buffer-name=file file<CR>
-noremap <C-z> :Unite file_mru<CR>
+noremap <C-l> :Unite -buffer-name=file file<CR>
+noremap <C-h> :Unite file_mru<CR>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 
 "NERDTree
