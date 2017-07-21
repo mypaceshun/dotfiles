@@ -101,7 +101,7 @@ NeoBundleCheck
 " Other setting for plugin
 "========================
 "Unite
-noremap <C-l> :Unite -buffer-name=file file<CR>
+noremap <C-n> :Unite -buffer-name=file file<CR>
 noremap <C-h> :Unite file_mru<CR>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 
