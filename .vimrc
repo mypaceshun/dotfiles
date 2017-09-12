@@ -43,10 +43,10 @@ nnoremap L $
 " window control
 nnoremap <silent> ss :split<CR>
 nnoremap <silent> sv :vsplit<CR>
-nnoremap <silent> sh <C-w>h<CR>
-nnoremap <silent> sj <C-w>j<CR>
-nnoremap <silent> sk <C-w>k<CR>
-nnoremap <silent> sl <C-w>l<CR>
+nnoremap <silent> sh <C-w>h
+nnoremap <silent> sj <C-w>j
+nnoremap <silent> sk <C-w>k
+nnoremap <silent> sl <C-w>l
 
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 " 
@@ -57,8 +57,8 @@ vnoremap <silent> <C-p> "0p<CR>
 
 " for UnicornIDM
 nnoremap T :w<CR>:!cd ~/document/unicornidm && make test<CR>
-nnoremap TT :w<CR>:!cd ~/document/unicornidm && make test T="test/backend"<CR>
-nnoremap TTT :w<CR>:!cd ~/document/unicornidm && make test T="test/backend/test_ldap.py"<CR>
+nnoremap TT :w<CR>:!cd ~/document/unicornidm && make test T="-s test/backend"<CR>
+nnoremap TTT :w<CR>:!cd ~/document/unicornidm && make test T="-s test/backend/test_ad.py"<CR>
 
 "========================
 " NeoBundle
@@ -134,12 +134,4 @@ let g:indentLine_chare = '┆'
     \   exe "normal! g'\"" |
     \ endif
 endif
-""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""
-"自動的に閉じ括弧を入力
-""""""""""""""""""""""""""""""
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
 """"""""""""""""""""""""""""""
