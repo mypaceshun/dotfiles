@@ -26,6 +26,7 @@ syntax on
 
 " View
 set number
+set cursorline
 colorscheme ron
 
 " Tab
@@ -48,9 +49,16 @@ nnoremap <silent> sj <C-w>j
 nnoremap <silent> sk <C-w>k
 nnoremap <silent> sl <C-w>l
 
-nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
-" 
-vnoremap <silent> <C-p> "0p<CR>
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR>:SyntasticReset<CR>
+" ペーストの設定
+noremap <silent> p "0p
+noremap <silent> x "ex
+
+" vimgrep用の設定
+augroup WuickFixCmd
+    autocmd!
+    autocmd QuickFixCmdPost *grep* cwindow
+augroup END
 
 " Reload
 :command! Reload source ~/.vimrc
@@ -114,6 +122,11 @@ let g:syntastic_python_checkers = ["flake8"]
 
 "indentLine
 let g:indentLine_chare = '┆'
+
+
+au FileType gitcommit nnoremap <silent> <ESC><ESC> :q<CR>
+
+au FileType qf nnoremap <silent> <ESC><ESC> :q<CR>
 
 "========================
 " Alias
