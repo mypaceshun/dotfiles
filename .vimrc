@@ -94,6 +94,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'TwitVim'
 
 " Required:
 call neobundle#end()
@@ -122,6 +123,10 @@ let g:syntastic_python_checkers = ["flake8"]
 
 "indentLine
 let g:indentLine_chare = '┆'
+
+"TwitVim
+let twitvim_force_ssl = 1
+let twitvim_count = 40
 
 
 au FileType gitcommit nnoremap <silent> <ESC><ESC> :q<CR>
