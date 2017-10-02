@@ -1,5 +1,5 @@
 alias ll="ls -alh"
-alias la="ls -a" 
+alias la="ls -a"
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
@@ -10,8 +10,8 @@ setopt EXTENDED_HISTORY
 autoload colors
 colors
 PROMPT="
-:%{$fg[cyan]%}%~%{$reset_color%}
-%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}$"
+[%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}]
+%{$fg[cyan]%}%~%{$reset_color%}$"
 
 # load zsh_aliases
 if [ -f ~/.zsh_aliases ]; then
