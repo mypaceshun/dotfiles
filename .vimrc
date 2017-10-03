@@ -94,7 +94,6 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'TwitVim'
 
 " Required:
 call neobundle#end()
