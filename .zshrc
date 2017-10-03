@@ -1,9 +1,5 @@
 alias ll="ls -alh"
-<<<<<<< HEAD
 alias la="ls -a"
-=======
-alias la="ls -a" 
->>>>>>> d49f71960f921b225358ffb58e7c9bccfc079d2d
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
