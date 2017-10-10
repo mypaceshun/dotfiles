@@ -29,3 +29,8 @@ fi
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
+
+# load command completion
+fpath=(~/dotfiles/zsh-completions/src $fpath)
+fpath=(~/dotfiles/zsh-virsh-autocomplete $fpath)
+autoload -U compinit; compinit
