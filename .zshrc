@@ -34,3 +34,6 @@ fi
 fpath=(~/dotfiles/zsh-completions/src $fpath)
 fpath=(~/dotfiles/zsh-virsh-autocomplete $fpath)
 autoload -U compinit; compinit
+
+# load command_not_found_handler
+. ~/.zsh_command_not_found
