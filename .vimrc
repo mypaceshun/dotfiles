@@ -62,6 +62,7 @@ nnoremap <silent> <ESC><ESC> :nohlsearch<CR>:SyntasticReset<CR>
 " ペーストの設定
 noremap <silent> p "0p
 noremap <silent> x "ex
+set clipboard=unnamedplus
 
 " vimgrep用の設定
 augroup WuickFixCmd
