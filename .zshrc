@@ -11,7 +11,7 @@ autoload colors
 colors
 PROMPT="
 [%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}]
-%{$fg[cyan]%}%~%{$reset_color%}$"
+%{$fg[cyan]%}%~%{$reset_color%}$ "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
