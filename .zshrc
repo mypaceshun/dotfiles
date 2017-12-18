@@ -1,3 +1,5 @@
+set -u
+
 alias ll="ls -alh"
 alias la="ls -a"
 
