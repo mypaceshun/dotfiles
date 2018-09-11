@@ -31,6 +31,7 @@ nnoremap L $
 " window control
 nnoremap <silent> ss :split<CR>
 nnoremap <silent> sv :vsplit<CR>
+nnoremap <silent> st :tabnew<CR>
 nnoremap <silent> sh <C-w>h
 nnoremap <silent> sj <C-w>j
 nnoremap <silent> sk <C-w>k
@@ -57,6 +58,7 @@ Plug 'simeji/winresizer'
 " ステータスラインを装飾
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " PlugInstall でインストールするよ
@@ -79,7 +81,6 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 "-----------------------
 " vim-airlineの設定
 "-----------------------
-let g:airline#extensions#branch#enabled = 1
 
 "=======================
 " ネットからコピペ
