@@ -38,6 +38,9 @@ nnoremap <silent> sl <C-w>l
 
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 
+" jjでインサートモードを抜ける
+inoremap <silent> jj <ESC>
+
 " Reload
 :command! Reload source ~/.vimrc
 
@@ -46,10 +49,38 @@ nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 "=======================
 
 call plug#begin('~/.vim/plugged')
+" ファイルオープン支援
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/neomru.vim'
+" ウィンドウサイズを簡単に変更
+Plug 'simeji/winresizer'
+" ステータスラインを装飾
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " PlugInstall でインストールするよ
+
+"=======================
+" プラグインごとの設定
+"=======================
+
+"-----------------------
+" unite, neomruの設定
+"-----------------------
+" ファイル一覧
+noremap <C-N> :Unite -buffer-name=file file<CR>
+" 最近使ったファイルの一覧
+noremap <C-H> :Unite file_mru<CR>
+" ESCキーを2回押すと終了する
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+"-----------------------
+" vim-airlineの設定
+"-----------------------
+let g:airline#extensions#branch#enabled = 1
+
 "=======================
 " ネットからコピペ
 "=======================
