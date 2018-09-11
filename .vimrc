@@ -41,7 +41,15 @@ nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 " Reload
 :command! Reload source ~/.vimrc
 
+"=======================
+" vim-plugの設定
+"=======================
 
+call plug#begin('~/.vim/plugged')
+Plug 'Shougo/unite.vim'
+call plug#end()
+
+" PlugInstall でインストールするよ
 "=======================
 " ネットからコピペ
 "=======================
