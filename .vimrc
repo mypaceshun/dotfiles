@@ -3,30 +3,14 @@ set backspace=indent,eol,start
 set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=ja
 set modeline
-set printoptions=paper:a4
-set ruler
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-" vim: set ft=vim :
-syntax on
-
 "=========================
 "   Kawai's Setting
 "=========================
-
+"
 " View
 set number
 set cursorline
-colorscheme ron
-
-" Tab
-set expandtab
-set autoindent
-set smartindent
-
-" Key mapping
-nnoremap H ^
-nnoremap L $
+colorscheme elflord
 
 " window control
 nnoremap <silent> ss :split<CR>
@@ -37,18 +21,34 @@ nnoremap <silent> sj <C-w>j
 nnoremap <silent> sk <C-w>k
 nnoremap <silent> sl <C-w>l
 
-nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
+" Indent follow filetype
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.yml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.md setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.sh setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead Makefile setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+    autocmd BufNewFile,BufRead httpd.conf* setlocal tabstop=2 softtabstop=2 shiftwidth=2 et ft=apache
+    autocmd BufNewFile,BufRead ssl.conf* setlocal tabstop=2 softtabstop=2 shiftwidth=2 et ft=apache
+augroup END
 
+" openterminal
+noremap <C-T> :terminal ++curwin<CR>
+
+" terminal settings
+tnoremap <ESC> <C-w><S-n>
+
+" ESC2回で検索時のハイライトを消す
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 " jjでインサートモードを抜ける
 inoremap <silent> jj <ESC>
-
 " Reload
 :command! Reload source ~/.vimrc
 
 "=======================
 " vim-plugの設定
 "=======================
-
 call plug#begin('~/.vim/plugged')
 " ファイルオープン支援
 Plug 'Shougo/unite.vim'
@@ -61,12 +61,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
-" PlugInstall でインストールするよ
-
-"=======================
-" プラグインごとの設定
-"=======================
-
 "-----------------------
 " unite, neomruの設定
 "-----------------------
@@ -77,22 +71,3 @@ noremap <C-H> :Unite file_mru<CR>
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-
-"-----------------------
-" vim-airlineの設定
-"-----------------------
-
-"=======================
-" ネットからコピペ
-"=======================
-
-""""""""""""""""""""""""""""""
-" 最後のカーソル位置を復元する
-""""""""""""""""""""""""""""""
- if has("autocmd")
-     autocmd BufReadPost *
-         \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \   exe "normal! g'\"" |
-    \ endif
-endif
-""""""""""""""""""""""""""""""
