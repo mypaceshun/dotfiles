@@ -112,7 +112,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias dcompose=docker-compose
-
 # load command_not_found
 . ~/.bash_command_not_found
+
+export PIPENV_VENV_IN_PROJECT=1
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin

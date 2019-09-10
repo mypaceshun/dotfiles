@@ -33,8 +33,16 @@ fi
 # load command completion
 fpath=(~/dotfiles/zsh-completions/src $fpath)
 fpath=(~/dotfiles/zsh-virsh-autocomplete $fpath)
+fpath=(~/dotfiles/zsh-pipenv-completion $fpath)
 autoload -U compinit; compinit
 
 # load command_not_found_handler
 . ~/.zsh_command_not_found
 export PATH=$PATH:/home/shun/shun-utils/bin
+export PIPENV_VENV_IN_PROJECT=1
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin

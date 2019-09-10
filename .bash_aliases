@@ -10,3 +10,5 @@ alias apt-update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove 
 alias dcompose='docker-compose'
 
 alias code='source ~/document/VScodeenv/bin/activate && code ./ && deactivate'
+
+alias pipenv='~/.local/bin/pipenv'
