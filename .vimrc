@@ -38,6 +38,8 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.css setlocal softtabstop=4 shiftwidth=4 et
     autocmd BufNewFile,BufRead *.less setlocal softtabstop=4 shiftwidth=4 et
     autocmd BufNewFile,BufRead *.spec setlocal softtabstop=4 shiftwidth=4 et
+    autocmd BufNewFile,BufRead *vimrc setlocal softtabstop=4 shiftwidth=4 et
+    autocmd BufNewFile,BufRead *shrc setlocal softtabstop=4 shiftwidth=4 et
     autocmd BufNewFile,BufRead Makefile setlocal softtabstop=4 shiftwidth=4 noexpandtab
     autocmd BufNewFile,BufRead httpd.conf* setlocal softtabstop=2 shiftwidth=2 et ft=apache
     autocmd BufNewFile,BufRead ssl.conf* setlocal softtabstop=2 shiftwidth=2 et ft=apache

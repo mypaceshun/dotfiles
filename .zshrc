@@ -9,14 +9,14 @@ setopt EXTENDED_HISTORY
 
 autoload colors
 colors
-if [ $USER -eq "root" ]; then
+if [ $USER = "root" ]; then
     PROMPT="
-    <%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}>
-    %{$fg[cyan]%}%~%{$reset_color%}$ "
+<%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}>
+%{$fg[cyan]%}%~%{$reset_color%}$ "
 elif
     PROMPT="
-    [%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}]
-    %{$fg[cyan]%}%~%{$reset_color%}$ "
+[%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}]
+%{$fg[cyan]%}%~%{$reset_color%}$ "
 fi
 
 # enable color support of ls and also add handy aliases
@@ -39,15 +39,29 @@ fi
 # load command completion
 fpath=(~/dotfiles/zsh-completions/src $fpath)
 fpath=(~/dotfiles/zsh-virsh-autocomplete $fpath)
-fpath=(~/dotfiles/zsh-pipenv-completion $fpath)
 autoload -U compinit; compinit
 
 # load command_not_found_handler
 . ~/.zsh_command_not_found
-export PIPENV_VENV_IN_PROJECT=1
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
+# pipenv settings
+type pipenv >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+    export PIPENV_VENV_IN_PROJECT=1
+    fpath=(~/dotfiles/zsh-pipenv-completion $fpath)
+fi
+
+# pyenv settings
+type pyenv >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+fi
+
+# go settings
+type go >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+    export GOPATH=$HOME/.go
+    export PATH=$PATH:$GOPATH/bin
+fi
