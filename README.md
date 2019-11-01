@@ -3,7 +3,7 @@
 #### Application list
 
 * bash
-* tmux
+* zsh
 * Vim
 
 #### 更新履歴

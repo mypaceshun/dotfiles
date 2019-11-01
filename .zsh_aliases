@@ -5,9 +5,3 @@ alias la='ls -A'
 alias ..="cd .."
 
 alias dcompose='docker-compose'
-
-alias code='source ~/document/VScodeenv/bin/activate && code ./ && deactivate'
-
-alias maru='cat /home/shun/document/tmp/maru.txt'
-
-alias pipenv='~/.local/bin/pipenv'

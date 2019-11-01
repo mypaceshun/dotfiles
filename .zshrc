@@ -38,7 +38,6 @@ autoload -U compinit; compinit
 
 # load command_not_found_handler
 . ~/.zsh_command_not_found
-export PATH=$PATH:/home/shun/shun-utils/bin
 export PIPENV_VENV_IN_PROJECT=1
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
