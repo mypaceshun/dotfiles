@@ -13,7 +13,7 @@ if [ $USER = "root" ]; then
     PROMPT="
 <%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}>
 %{$fg[cyan]%}%~%{$reset_color%}$ "
-elif
+else
     PROMPT="
 [%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}]
 %{$fg[cyan]%}%~%{$reset_color%}$ "

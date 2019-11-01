@@ -1,0 +1,13 @@
+[push]
+	default = simple
+
+[fetch]
+	prune = true
+
+[alias]
+    	plog = log --graph --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=iso
+	s = status
+	c = commit
+	a = add
+	ps = push
+	pl = pull
