@@ -44,6 +44,13 @@ autoload -U compinit; compinit
 # load command_not_found_handler
 . ~/.zsh_command_not_found
 
+LOCAL_ZSHRC_PATH=~/.local_zshrc
+# load local settings
+if [ -e ${LOCAL_ZSHRC_PATH} ]; then
+    . ${LOCAL_ZSHRC_PATH}
+fi
+unset LOCAL_ZSHRC_PATH
+
 # pipenv settings
 type pipenv >/dev/null 2>&1
 if [ $? -eq 0 ]; then
