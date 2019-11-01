@@ -43,11 +43,13 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead ssl.conf* setlocal softtabstop=2 shiftwidth=2 et ft=apache
 augroup END
 
-" openterminal
-noremap <C-T> :terminal ++curwin<CR>
+if v:version >= 800
+    " openterminal
+    noremap <C-T> :terminal ++curwin<CR>
 
-" terminal settings
-tnoremap <ESC> <C-w><S-n>
+    " terminal settings
+    tnoremap <ESC> <C-w><S-n>
+endif
 
 " ESC2回で検索時のハイライトを消す
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
