@@ -59,8 +59,7 @@ if [ $? -eq 0 ]; then
 fi
 
 # pyenv settings
-type pyenv >/dev/null 2>&1
-if [ $? -eq 0 ]; then
+if [ -e "$HOME/.pyenv" ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
