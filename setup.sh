@@ -18,3 +18,8 @@ do
         ln -sf $HOME/dotfiles/$file $HOME/$file
     fi
 done
+
+if type npm >/dev/null 2>&1; then
+  mkdir -p /usr/local/share/zsh/site-functions \
+  && npm install --global pure-prompt
+fi
