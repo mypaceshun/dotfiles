@@ -9,14 +9,20 @@ setopt EXTENDED_HISTORY
 
 autoload colors
 colors
-if [ $USER = "root" ]; then
-    PROMPT="
+
+autoload -U promptinit; promptinit
+if (prompt -l | grep "pure ") >/dev/null 2>&1; then
+    prompt pure
+else
+    if [ $USER = "root" ]; then
+        PROMPT="
 <%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}>
 %{$fg[cyan]%}%~%{$reset_color%}$ "
-else
-    PROMPT="
+    else
+        PROMPT="
 [%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}]
 %{$fg[cyan]%}%~%{$reset_color%}$ "
+    fi
 fi
 
 # enable color support of ls and also add handy aliases
