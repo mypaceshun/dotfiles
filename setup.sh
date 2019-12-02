@@ -20,6 +20,8 @@ do
 done
 
 if type npm >/dev/null 2>&1; then
-  mkdir -p /usr/local/share/zsh/site-functions \
-  && npm install --global pure-prompt
+  if !(npm list --global | grep pure-prompt>/dev/null 2>&1); then
+    mkdir -p /usr/local/share/zsh/site-functions \
+    && npm install --global pure-prompt
+  fi
 fi
