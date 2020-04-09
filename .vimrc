@@ -106,3 +106,5 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 endif
 """"""""""""""""""""""""""""""
 
+" beep音を鳴らさない
+set belloff=all
