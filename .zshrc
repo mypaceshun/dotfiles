@@ -77,3 +77,6 @@ if [ $? -eq 0 ]; then
     export GOPATH=$HOME/.go
     export PATH=$PATH:$GOPATH/bin
 fi
+
+# ビープ音を消す
+setopt nobeep
