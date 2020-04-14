@@ -107,4 +107,4 @@ endif
 """"""""""""""""""""""""""""""
 
 " beep音を鳴らさない
-set belloff=all
+set vb t_vb=
