@@ -57,6 +57,12 @@ if [ -e ${LOCAL_ZSHRC_PATH} ]; then
 fi
 unset LOCAL_ZSHRC_PATH
 
+# load local bin
+LOCAL_BIN_PATH=${HOME}/.local/bin
+if [ -e ${LOCAL_BIN_PATH} ]; then
+    export PATH=${PATH}:${LOCAL_BIN_PATH}
+fi
+
 # pipenv settings
 type pipenv >/dev/null 2>&1
 if [ $? -eq 0 ]; then
