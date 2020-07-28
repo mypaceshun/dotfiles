@@ -57,6 +57,9 @@ if [ -e ${LOCAL_ZSHRC_PATH} ]; then
 fi
 unset LOCAL_ZSHRC_PATH
 
+# for virsh settings
+export LIBVIRT_DEFAULT_URI="qemu:///system"
+
 # load local bin
 LOCAL_BIN_PATH=${HOME}/.local/bin
 if [ -e ${LOCAL_BIN_PATH} ]; then
