@@ -93,5 +93,12 @@ if [ $? -eq 0 ]; then
     export PATH=$PATH:$GOPATH/bin
 fi
 
+# aws settings
+type aws_completer >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+    autoload bashcompinit && bashcompinit
+    complete -C 'aws_completer' aws
+fi
+
 # ビープ音を消す
 setopt nobeep
