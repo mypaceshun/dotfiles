@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 DOT_FILES=(.bash* .vim* .zsh* .zpreztorc .gitconfig)
 
