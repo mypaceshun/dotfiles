@@ -12,8 +12,6 @@ colors
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-  zstyle ':prezto:module:editor' key-bindings 'vi'
-  zstyle ':prezto:module:prompt' theme 'pure'
 else
     if [ $USER = "root" ]; then
         PROMPT="
