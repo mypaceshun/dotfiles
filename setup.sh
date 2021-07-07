@@ -19,9 +19,17 @@ do
     fi
 done
 
-if type npm >/dev/null 2>&1; then
-  if !(npm list --global | grep pure-prompt>/dev/null 2>&1); then
-    mkdir -p /usr/local/share/zsh/site-functions \
-    && npm install --global pure-prompt
-  fi
-fi
+# install pure-prompt
+# if type npm >/dev/null 2>&1; then
+#   if !(npm list --global | grep pure-prompt>/dev/null 2>&1); then
+#     mkdir -p /usr/local/share/zsh/site-functions \
+#     && npm install --global pure-prompt
+#   fi
+# fi
+
+# install Prezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done

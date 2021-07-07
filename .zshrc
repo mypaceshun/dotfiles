@@ -10,9 +10,8 @@ setopt EXTENDED_HISTORY
 autoload colors
 colors
 
-autoload -U promptinit; promptinit
-if (prompt -l | grep "pure ") >/dev/null 2>&1; then
-    prompt pure
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 else
     if [ $USER = "root" ]; then
         PROMPT="
