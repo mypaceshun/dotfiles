@@ -14,3 +14,15 @@
 	a = add
 	ps = push
 	pl = pull
+
+[pull]
+	ff = only
+
+[init]
+	defaultBranch = master
+[include]
+	path = ~/.gitconfig.local
+[pager]
+	branch = cat
+[core]
+	editor = vim

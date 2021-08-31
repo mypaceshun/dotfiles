@@ -5,3 +5,4 @@ alias la='ls -A'
 alias ..="cd .."
 
 alias dcompose='docker-compose'
+alias unzip-win='unzip -O CP932'

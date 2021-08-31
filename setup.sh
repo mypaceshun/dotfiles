@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 DOT_FILES=(.bash* .vim* .zsh* .zpreztorc .gitconfig)
 
@@ -19,6 +19,19 @@ do
     fi
 done
 
+# rewrite gitconfig
+GITCONFIG=$HOME/.gitconfig
+if [ -f $GITCONFIG ]; then
+  grep -E "~/.gitconfig.local" $GITCONFIG
+  if [ $? -eq 1 ]; then
+    echo "rewrite $GITCONFIG"
+    cat << EOF >>$GITCONFIG
+[include]
+	path = ~/.gitconfig.local
+EOF
+  fi
+fi
+
 # install pure-prompt
 # if type npm >/dev/null 2>&1; then
 #   if !(npm list --global | grep pure-prompt>/dev/null 2>&1); then
@@ -28,8 +41,7 @@ done
 # fi
 
 # install Prezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -vs "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}" || :
-done
+type zsh
+if [ $? -eq 0 ]; then
+  zsh install-prezto.zsh
+fi
