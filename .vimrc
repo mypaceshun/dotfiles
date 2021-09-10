@@ -24,26 +24,8 @@ nnoremap <silent> sn gt
 nnoremap <silent> sp gT
 
 set tabstop=8
-
-" Indent follow filetype
-augroup fileTypeIndent
-    autocmd!
-    autocmd BufNewFile,BufRead *.py setlocal softtabstop=4 shiftwidth=4 et
-    autocmd BufNewFile,BufRead *.yml setlocal softtabstop=2 shiftwidth=2 et
-    autocmd BufNewFile,BufRead *.md setlocal softtabstop=2 shiftwidth=2 et
-    autocmd BufNewFile,BufRead *.sh setlocal softtabstop=2 shiftwidth=2 et
-    autocmd BufNewFile,BufRead *.c setlocal softtabstop=4 shiftwidth=4 et
-    autocmd BufNewFile,BufRead *.js setlocal softtabstop=2 shiftwidth=2 et
-    autocmd BufNewFile,BufRead *.html setlocal softtabstop=4 shiftwidth=4 et
-    autocmd BufNewFile,BufRead *.css setlocal softtabstop=4 shiftwidth=4 et
-    autocmd BufNewFile,BufRead *.less setlocal softtabstop=4 shiftwidth=4 et
-    autocmd BufNewFile,BufRead *.spec setlocal softtabstop=4 shiftwidth=4 et
-    autocmd BufNewFile,BufRead *vimrc setlocal softtabstop=4 shiftwidth=4 et
-    autocmd BufNewFile,BufRead *shrc setlocal softtabstop=4 shiftwidth=4 et
-    autocmd BufNewFile,BufRead Makefile setlocal softtabstop=4 shiftwidth=4 noexpandtab
-    autocmd BufNewFile,BufRead httpd.conf* setlocal softtabstop=2 shiftwidth=2 et ft=apache
-    autocmd BufNewFile,BufRead ssl.conf* setlocal softtabstop=2 shiftwidth=2 et ft=apache
-augroup END
+set shiftwidth=2
+set softtabstop=-1
 
 if v:version >= 800
     " openterminal
@@ -61,6 +43,11 @@ nnoremap <silent> L $
 nnoremap <silent> H ^
 " Reload
 :command! Reload source ~/.vimrc
+" HTMLタグ自動補完
+augroup MyXML
+  autocmd!
+  autocmd BufNewFile,BufRead *.html inoremap <buffer> </ </<C-x><C-o>
+augroup END
 
 "=======================
 " vim-plugの設定
