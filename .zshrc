@@ -69,7 +69,6 @@ fi
 type pipenv >/dev/null 2>&1
 if [ $? -eq 0 ]; then
     export PIPENV_VENV_IN_PROJECT=1
-    eval "$(pipenv --completion)"
 fi
 
 # pyenv settings
