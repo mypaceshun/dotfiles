@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BASEDIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
-DOT_FILES=(.bash* .vim* .zsh* .zpreztorc .gitconfig)
+DOT_FILES=(.bash* .vim* .zsh* .gitconfig)
 
 for file in ${DOT_FILES[@]}
 do
