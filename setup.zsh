@@ -1,4 +1,4 @@
-BASEDIR=`dirname $0`
+BASEDIR=$(cd $(dirname $0); pwd)
 COMPDIR=~/.zsh/Completion
 
 # download zsh-completions
