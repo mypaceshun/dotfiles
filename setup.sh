@@ -1,21 +1,22 @@
 #!/bin/bash
 
+BASEDIR=`dirname $0`
 DOT_FILES=(.bash* .vim* .zsh* .zpreztorc .gitconfig)
 
 for file in ${DOT_FILES[@]}
 do
     if [ -f $HOME/$file -a  ! -L $HOME/$file ]; then
 # make backup directory
-        if [ ! -e $HOME/dotfiles/backup ]; then
+        if [ ! -e ${BASEDIR}/backup ]; then
             echo backup directory maked
-            mkdir $HOME/dotfiles/backup
+            mkdir ${BASEDIR}/backup
         fi
         echo $file move backup directory becouse $file is exist
-        mv -fv $HOME/$file $HOME/dotfiles/backup/$file
+        mv -fv $HOME/$file ${BASEDIR}/backup/$file
     fi
     if [ ! -e $HOME/$file ]; then
         echo make symbolic link $file
-        ln -sf $HOME/dotfiles/$file $HOME/$file
+        ln -sf ${BASEDIR}/$file $HOME/$file
     fi
 done
 
@@ -32,16 +33,11 @@ EOF
   fi
 fi
 
-# install pure-prompt
-# if type npm >/dev/null 2>&1; then
-#   if !(npm list --global | grep pure-prompt>/dev/null 2>&1); then
-#     mkdir -p /usr/local/share/zsh/site-functions \
-#     && npm install --global pure-prompt
-#   fi
-# fi
-
-# install Prezto
-type zsh
-if [ $? -eq 0 ]; then
-  zsh install-prezto.zsh
+# load setup.zsh for zsh
+type zsh >/dev/null 2>&1
+if [ $? -eq 0 ];then
+  ZSH_SETUP=${BASEDIR}/setup.zsh
+  if [ -e ${ZSH_SETUP} ]; then
+    zsh ${ZSH_SETUP}
+  fi
 fi

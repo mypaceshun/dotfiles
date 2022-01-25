@@ -1,6 +1,0 @@
-# vi: set expandtab sw=2 softtabstop=2 :
-
-function command_not_found_handler(){
-  echo "そんなものはない $1" >&2
-  exit 1
-}
