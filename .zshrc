@@ -17,6 +17,13 @@ if [ -f ${ALIAS_FILE} ]; then
 fi
 unset ALIAS_FILE
 
+# load local bin
+LOCAL_BIN_PATH=${HOME}/.local/bin
+if [ -e ${LOCAL_BIN_PATH} ]; then
+    export PATH=${PATH}:${LOCAL_BIN_PATH}
+fi
+unset LOCAL_BIN_PATH
+
 # load .zshrc.d
 ZSHRC_D=~/.zshrc.d
 if [ -d ${ZSHRC_D} ]; then
@@ -32,10 +39,3 @@ if [ -e ${LOCAL_ZSHRC_PATH} ]; then
     source ${LOCAL_ZSHRC_PATH}
 fi
 unset LOCAL_ZSHRC_PATH
-
-# load local bin
-LOCAL_BIN_PATH=${HOME}/.local/bin
-if [ -e ${LOCAL_BIN_PATH} ]; then
-    export PATH=${PATH}:${LOCAL_BIN_PATH}
-fi
-unset LOCAL_BIN_PATH
