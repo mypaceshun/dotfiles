@@ -15,9 +15,6 @@
 	ps = push
 	pl = pull
 
-[pull]
-	ff = only
-
 [init]
 	defaultBranch = master
 [include]
