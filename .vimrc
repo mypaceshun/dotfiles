@@ -37,8 +37,6 @@ endif
 
 " ESC2回で検索時のハイライトを消す
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
-" jjでインサートモードを抜ける
-inoremap <silent> jj <ESC>
 nnoremap <silent> L $
 nnoremap <silent> H ^
 " Reload
