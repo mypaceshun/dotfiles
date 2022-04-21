@@ -60,6 +60,8 @@ Plug 'simeji/winresizer'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
+" Lark用のシンタックスハイライト
+Plug 'lark-parser/vim-lark-syntax'
 call plug#end()
 
 "-----------------------
