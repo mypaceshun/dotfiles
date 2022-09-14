@@ -1,8 +1,10 @@
 # some more ls aliases
+alias ls='ls --color=auto'
 alias ll='ls -Alh'
 alias la='ls -A'
+alias lz='ll -Z'
 
 alias ..="cd .."
 
-alias dcompose='docker-compose'
-alias unzip-win='unzip -O CP932'
+alias dcompose='docker compose'
+alias unzipwin='unzip -O CP932'
