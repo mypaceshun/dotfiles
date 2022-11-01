@@ -10,7 +10,18 @@ set modeline
 " View
 set number
 set cursorline
+set softtabstop=-1
+set shiftwidth=0
 colorscheme elflord
+
+augroup vimr
+  autocmd!
+  autocmd Filetype python setlocal expandtab tabstop=4
+  autocmd Filetype html setlocal expandtab tabstop=2
+  autocmd Filetype htmldjango setlocal expandtab tabstop=2
+  autocmd Filetype json setlocal expandtab tabstop=2
+  autocmd Filetype javascript setlocal expandtab tabstop=2
+augroup END
 
 " window control
 nnoremap <silent> ss :split<CR>
