@@ -10,11 +10,14 @@ set modeline
 " View
 set number
 set cursorline
+set incsearch
+set ignorecase
+set smartcase
 set softtabstop=-1
 set shiftwidth=0
 colorscheme elflord
 
-augroup vimr
+augroup vimrc
   autocmd!
   autocmd Filetype python setlocal expandtab tabstop=4
   autocmd Filetype html setlocal expandtab tabstop=2
@@ -73,6 +76,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 " Lark用のシンタックスハイライト
 Plug 'lark-parser/vim-lark-syntax'
+" jinja2用のシンタックスハイライト
+Plug 'chase/vim-ansible-yaml'
 call plug#end()
 
 "-----------------------
