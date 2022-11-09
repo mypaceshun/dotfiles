@@ -111,3 +111,7 @@ endif
 
 " beep音を鳴らさない
 set vb t_vb=
+
+if filereadable(expand('$HOME/.vimrc.local'))
+  source $HOME/.vimrc.local
+endif
