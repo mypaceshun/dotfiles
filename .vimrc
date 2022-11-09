@@ -77,7 +77,7 @@ Plug 'tpope/vim-fugitive'
 " Lark用のシンタックスハイライト
 Plug 'lark-parser/vim-lark-syntax'
 " jinja2用のシンタックスハイライト
-Plug 'chase/vim-ansible-yaml'
+Plug 'pearofducks/ansible-vim'
 call plug#end()
 
 "-----------------------
