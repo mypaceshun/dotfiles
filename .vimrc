@@ -11,15 +11,21 @@ set modeline
 set number
 set cursorline
 set incsearch
-set ignorecase
+" set ignorecase
 set smartcase
 set softtabstop=-1
 set shiftwidth=0
 colorscheme elflord
 
+
+set tabstop=8
+set shiftwidth=2
+set softtabstop=-1
+
 augroup vimrc
   autocmd!
   autocmd Filetype python setlocal expandtab tabstop=4
+  autocmd Filetype rst setlocal expandtab shiftwidth=3 tabstop=3
   autocmd Filetype html setlocal expandtab tabstop=2
   autocmd Filetype htmldjango setlocal expandtab tabstop=2
   autocmd Filetype json setlocal expandtab tabstop=2
@@ -36,10 +42,6 @@ nnoremap <silent> sl <C-w>l
 nnoremap <silent> st :tabnew<CR>
 nnoremap <silent> sn gt
 nnoremap <silent> sp gT
-
-set tabstop=8
-set shiftwidth=2
-set softtabstop=-1
 
 if v:version >= 800
     " openterminal
