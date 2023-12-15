@@ -24,6 +24,13 @@ if [ -e ${LOCAL_BIN_PATH} ]; then
 fi
 unset LOCAL_BIN_PATH
 
+# load local settings
+LOCAL_ZSHRC_PATH=~/.local_zshrc
+if [ -e ${LOCAL_ZSHRC_PATH} ]; then
+    source ${LOCAL_ZSHRC_PATH}
+fi
+unset LOCAL_ZSHRC_PATH
+
 # load .zshrc.d
 ZSHRC_D=~/.zshrc.d
 if [ -d ${ZSHRC_D} ]; then
@@ -32,10 +39,3 @@ if [ -d ${ZSHRC_D} ]; then
   done
 fi
 unset ZSHRC_D
-
-# load local settings
-LOCAL_ZSHRC_PATH=~/.local_zshrc
-if [ -e ${LOCAL_ZSHRC_PATH} ]; then
-    source ${LOCAL_ZSHRC_PATH}
-fi
-unset LOCAL_ZSHRC_PATH
