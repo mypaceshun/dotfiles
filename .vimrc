@@ -25,11 +25,12 @@ set softtabstop=-1
 augroup vimrc
   autocmd!
   autocmd Filetype python setlocal expandtab tabstop=4
-  autocmd Filetype rst setlocal expandtab shiftwidth=3 tabstop=3
+  autocmd Filetype rst setlocal expandtab shiftwidth=2 tabstop=2
   autocmd Filetype html setlocal expandtab tabstop=2
   autocmd Filetype htmldjango setlocal expandtab tabstop=2
   autocmd Filetype json setlocal expandtab tabstop=2
   autocmd Filetype javascript setlocal expandtab tabstop=2
+  autocmd Filetype go setlocal noexpandtab tabstop=2
 augroup END
 
 " window control
