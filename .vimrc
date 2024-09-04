@@ -31,6 +31,7 @@ augroup vimrc
   autocmd Filetype json setlocal expandtab tabstop=2
   autocmd Filetype javascript setlocal expandtab tabstop=2
   autocmd Filetype go setlocal noexpandtab tabstop=2
+  autocmd Filetype svelte setlocal noexpandtab tabstop=4 shiftwidth=4
 augroup END
 
 " window control
@@ -81,7 +82,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'lark-parser/vim-lark-syntax'
 " jinja2用のシンタックスハイライト
 Plug 'pearofducks/ansible-vim'
+" Svelte用のシンタックスハイライト
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 call plug#end()
+
 
 "-----------------------
 " unite, neomruの設定
