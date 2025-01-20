@@ -26,3 +26,6 @@
 	quotepath = false
 [pull]
 	rebase = false
+[user]
+	name = KAWAI Shun
+	email = mypaceshun@gmail.com
