@@ -21,6 +21,7 @@ colorscheme elflord
 set tabstop=8
 set shiftwidth=2
 set softtabstop=-1
+set smartindent
 
 augroup vimrc
   autocmd!
@@ -32,6 +33,8 @@ augroup vimrc
   autocmd Filetype javascript setlocal expandtab tabstop=2
   autocmd Filetype go setlocal noexpandtab tabstop=2
   autocmd Filetype svelte setlocal noexpandtab tabstop=4 shiftwidth=4
+  autocmd Filetype typescript setlocal noexpandtab tabstop=4 shiftwidth=4
+  autocmd Filetype sh setlocal expandtab tabstop=4 shiftwidth=4
 augroup END
 
 " window control
