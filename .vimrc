@@ -90,7 +90,9 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 " Go用
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+if (v:version == 802 && has("patch5072")) || v:version > 802
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+endif
 call plug#end()
 
 
