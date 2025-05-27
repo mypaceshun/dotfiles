@@ -17,8 +17,6 @@
 
 [init]
 	defaultBranch = master
-[include]
-	path = ~/.gitconfig.local
 [pager]
 	branch = cat
 [core]
@@ -29,3 +27,5 @@
 [user]
 	name = KAWAI Shun
 	email = mypaceshun@gmail.com
+[include]
+	path = ~/.gitconfig.local
