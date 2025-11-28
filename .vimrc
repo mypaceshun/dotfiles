@@ -15,7 +15,6 @@ set incsearch
 set smartcase
 set softtabstop=-1
 set shiftwidth=0
-colorscheme elflord
 
 
 set tabstop=8
