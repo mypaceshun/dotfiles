@@ -24,11 +24,11 @@ function precmd() {
 if [ ${UID} -eq 0 ]; then
   PROMPT='
 <%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}> $(__git_ps1 "(%s)")
-%{$fg[cyan]%}%1d%{$reset_color%}# '
+%{$fg[cyan]%}%~%{$reset_color%}# '
 else
   PROMPT='
 [%{$fg[red]%}%n@%{$fg[green]%}%m%{$reset_color%}] $(__git_ps1 "(%s)")
-%{$fg[cyan]%}%1d%{$reset_color%}$ '
+%{$fg[cyan]%}%~%{$reset_color%}$ '
 
 fi
 RPROMPT='${CMD_ELAPSED_TIME}s %{$fg[yellow]%}%D{%Y-%m-%d %H:%M:%S}%{$reset_color%}'
