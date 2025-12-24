@@ -16,8 +16,10 @@ function preexec() {
 function precmd() {
   if [[ -n ${CMD_START_TIME} ]]; then
     local endtime=$(date +%s.%N)
-    CMD_ELAPSED_TIME=$(printf "%.2f" "$(( endtime - CMD_START_TIME ))")
+    CMD_ELAPSED_TIME=$(printf "%.2fs" "$(( endtime - CMD_START_TIME ))")
     unset CMD_START_TIME
+  else
+    CMD_ELAPSED_TIME=""
   fi
 }
 
@@ -31,4 +33,4 @@ else
 %{$fg[cyan]%}%~%{$reset_color%}$ '
 
 fi
-RPROMPT='${CMD_ELAPSED_TIME}s %{$fg[yellow]%}%D{%Y-%m-%d %H:%M:%S}%{$reset_color%}'
+RPROMPT='${CMD_ELAPSED_TIME} %{$fg[yellow]%}%D{%Y-%m-%d %H:%M:%S}%{$reset_color%}'
