@@ -9,7 +9,7 @@ unset comppath
 
 # load ~/.zsh/Completion/git-completion.bash
 gitbash_comppath=~/.zsh/Completion/git-completion.bash
-if [ -f ${bash_comppath} ]; then
+if [ -f ${gitbash_comppath} ]; then
   zstyle ':completion:*:*:git:*' script ${gitbash_comppath}
 fi
 unset gitbash_comppath

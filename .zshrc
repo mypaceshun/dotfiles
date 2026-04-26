@@ -17,10 +17,22 @@ if [ -f ${ALIAS_FILE} ]; then
 fi
 unset ALIAS_FILE
 
+# add dir to PATH without duplicates
+# usage: pathmarge <dir> [prepend]
+function pathmarge() {
+  local dir="$1"
+  [[ ":$PATH:" == *":$dir:"* ]] && return
+  if [[ "$2" == "prepend" ]]; then
+    export PATH="$dir:$PATH"
+  else
+    export PATH="$PATH:$dir"
+  fi
+}
+
 # load local bin
 LOCAL_BIN_PATH=${HOME}/.local/bin
 if [ -e ${LOCAL_BIN_PATH} ]; then
-    export PATH=${PATH}:${LOCAL_BIN_PATH}
+    pathmarge ${LOCAL_BIN_PATH}
 fi
 unset LOCAL_BIN_PATH
 
@@ -34,7 +46,7 @@ unset LOCAL_ZSHRC_PATH
 # load .zshrc.d
 ZSHRC_D=~/.zshrc.d
 if [ -d ${ZSHRC_D} ]; then
-  for zshfile in `ls ${ZSHRC_D}/*.zsh`; do
+  for zshfile in ${ZSHRC_D}/*.zsh; do
     source ${zshfile}
   done
 fi

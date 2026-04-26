@@ -13,10 +13,6 @@ set cursorline
 set incsearch
 " set ignorecase
 set smartcase
-set softtabstop=-1
-set shiftwidth=0
-
-
 set tabstop=8
 set shiftwidth=2
 set softtabstop=-1
