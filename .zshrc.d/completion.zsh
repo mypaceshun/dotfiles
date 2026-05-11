@@ -1,5 +1,3 @@
-autoload -Uz compinit && compinit
-
 # load ~/.zsh/Completion
 comppath=~/.zsh/Completion
 if [ -d ${comppath} ]; then
@@ -14,10 +12,18 @@ if [ -f ${gitbash_comppath} ]; then
 fi
 unset gitbash_comppath
 
-# load zsh-completions
-zsh_comppath=`find ~/.zsh/Completion -type d -name "zsh-completion*" | head -n 1`
-if [ -e ${zsh_comppath} ]; then
-  if [ -d ${zsh_comppath}/src ]; then
-    fpath=(${zsh_comppath}/src $fpath)
-  fi
+# load zsh-completions (use glob instead of find)
+zsh_comppath=(~/.zsh/Completion/zsh-completion*(N/[1]))
+if [[ -n ${zsh_comppath} && -d ${zsh_comppath}/src ]]; then
+  fpath=(${zsh_comppath}/src $fpath)
+fi
+unset zsh_comppath
+
+# run compinit once per day, compile dump to .zwc for faster loading
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+  zcompile ~/.zcompdump
+else
+  compinit -C
 fi
